@@ -1,0 +1,18 @@
+@import url(fonts.css);
+@import url(normalise.css);
+@import url(menuModal.css);
+@import url(game.css);
+
+body{
+    background-color:whitesmoke;
+    background-image: url('../images/background.png');
+    background-size: 30%;
+    background-repeat: inherit;
+
+    height: 100%;
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,73 @@
+.menu{
+    background-color: rgb(244, 244, 244);
+
+    border: 20px solid rgb(244, 244, 244);
+    outline: 2px solid rgb(47, 47, 47);
+    outline-offset: -20px;
+
+    min-height: 400px;
+    height: 70%;
+    min-width: 300px;
+    width: 70%;
+    max-width: 500px;
+
+    position: relative;
+    bottom: 5%;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.8s;
+}
+.menu__start-btn{
+    position: relative;
+    z-index: 200;
+
+    background-color: white;
+    color:rgb(0, 0, 0);
+    height: 160px;
+    width: 160px;
+
+    border-radius: 50%;
+
+    transition: all 0.2s;
+
+    font-family: 'Oswald';
+    font-weight: 200;
+    font-size: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu__start-btn:hover{
+    height: 165px;
+    width: 165px;
+    background-color: rgb(115, 192, 151);
+}
+.menu__form{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+    top:0px;
+    left:0px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.menu__heading{
+    color: rgb(33, 33, 33);
+    
+    font-family: 'Oswald';
+    font-weight: 600;
+    font-size: 70px;
+
+    user-select: none;
+}
+.menu__heading-guess{
+    color: rgb(50, 137, 91);
+    text-shadow: 1px 1px 3px rgb(33, 33, 33) ;
+}

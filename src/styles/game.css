@@ -1,0 +1,60 @@
+@keyframes drop {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}
+.game{
+
+
+    background-color: rgb(244, 244, 244);
+
+    border: 20px solid rgb(244, 244, 244);
+    outline: 2px solid rgb(47, 47, 47);
+    outline-offset: -20px;
+
+    min-height: 400px;
+    height: 70%;
+    min-width: 300px;
+    width: 70%;
+    max-width: 500px;
+
+    position: relative;
+    bottom: 5%;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 30px;
+
+
+
+    display: none;
+    animation: drop 0.7s ease forwards;
+}
+.code-container {
+  display: flex;
+  gap: 10px; /* Отступ между квадратиками */
+}
+
+.code-input {
+  width: 80px; /* Размер квадрата */
+  height: 80px;
+  font-size: 48px;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  text-transform: uppercase;
+
+  transition: all 0.2s;
+}
+.code-input-right{
+    background-color: rgb(161, 237, 161);
+    border-color: cadetblue;
+}
+
+.code-input:focus {
+  border-color: #143e1b; /* Цвет при фокусе */
+  outline: none;
+}
