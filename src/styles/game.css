@@ -11,8 +11,8 @@
     outline: 2px solid rgb(47, 47, 47);
     outline-offset: -20px;
 
-    min-height: 400px;
-    height: 70%;
+    min-height: 600px;
+    height: 600px;
     min-width: 300px;
     width: 70%;
     max-width: 500px;
@@ -26,22 +26,30 @@
     justify-content: space-between;
     align-items: center;
 
-    padding-bottom: 30px;
+    padding-bottom: 60px;
+    padding-inline: 10px;
 
 
 
     display: none;
     animation: drop 0.7s ease forwards;
 }
+.game .menu__heading{
+  margin-bottom: 10px;
+}
 .code-container {
-  display: flex;
-  gap: 10px; /* Отступ между квадратиками */
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  width:100%;
+  gap:10px;
+  margin-block: 10px;
 }
 
 .code-input {
-  width: 80px; /* Размер квадрата */
-  height: 80px;
-  font-size: 48px;
+  min-width: 0;
+  aspect-ratio: 1 / 1;
+  font-size: 1rem;
   text-align: center;
   border: 2px solid #ccc;
   border-radius: 5px;
@@ -49,12 +57,23 @@
 
   transition: all 0.2s;
 }
+.code-input-active{
+  border: 2px solid #848484;
+}
 .code-input-right{
     background-color: rgb(161, 237, 161);
     border-color: cadetblue;
 }
+.code-input-near{
+    background-color: rgb(240, 255, 106);
+    border-color: cadetblue
+}
+.code-input-wrong{
+    background-color: rgb(227, 125, 105);
+    border-color: cadetblue;
+}
 
 .code-input:focus {
-  border-color: #143e1b; /* Цвет при фокусе */
+  border-color: #143e1b;
   outline: none;
 }

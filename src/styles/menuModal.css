@@ -63,7 +63,7 @@
     
     font-family: 'Oswald';
     font-weight: 600;
-    font-size: 70px;
+    font-size: clamp(3rem,5vw,70px);
 
     user-select: none;
 }
