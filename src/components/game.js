@@ -78,16 +78,16 @@ this.activeLine[0].focus();
 
     }
 check(letter,id){
-    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
     if(letter.toLowerCase()===this.word[id].toLowerCase()){
         return "right";
     }
-    if(
-        Math.abs(alphabet.indexOf(letter.toLowerCase())-alphabet.indexOf(this.word[id].toLowerCase()))<2
+    
+    else{
+            if(
+        this.word.includes(letter.toLowerCase())
     ){
         return "near";
     }
-    else{
         return "wrong"
     }
 }
