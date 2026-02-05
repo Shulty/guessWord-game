@@ -65,6 +65,9 @@
     font-weight: 600;
 <<<<<<< Updated upstream
     font-size: clamp(3rem,5vw,70px);
+=======
+    font-size: min(10vw,5rem);
+>>>>>>> Stashed changes
 
     user-select: none;
 }
