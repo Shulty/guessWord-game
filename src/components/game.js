@@ -15,6 +15,9 @@ export class Game{
 
         this.activeLine = this.lines[0];
         this.SetActiveLine(0);
+
+        this.dialog = document.getElementById('result-dialog');
+        this.dialogTitle = document.getElementById('dialog-title');
     }   
 makeWordRight(){
     this.activeLine.forEach((el, index) => {
@@ -65,7 +68,7 @@ SetActiveLine(id){
             this.SetActiveLine(id+1);
         }
         if(id === 4){
-            //Endgame;
+            this.endGame();
             for(let i=0;i<this.len;i++){
                 this.activeLine[i].classList.toggle('code-input-active');
                 this.activeLine[i].disabled = true;
@@ -90,5 +93,9 @@ check(letter,id){
     }
         return "wrong"
     }
+}
+endGame(){
+    this.dialogTitle.textContent = this.word;
+    this.dialog.showModal();
 }
 }
