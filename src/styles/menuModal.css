@@ -60,7 +60,6 @@
 }
 .menu__heading{
     color: rgb(33, 33, 33);
-    
     font-family: 'Oswald';
     font-weight: 600;
     font-size: clamp(3rem,5vw,70px);
