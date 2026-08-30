@@ -1,123 +1,87 @@
-/* Анимация выпадения */
 @keyframes drop {
   from { transform: translateY(-100%); }
   to   { transform: translateY(0); }
 }
-
-/* Основной блок игры */
-.game {
+.game{
     background-color: rgb(244, 244, 244);
 
     border: 20px solid rgb(244, 244, 244);
     outline: 2px solid rgb(47, 47, 47);
     outline-offset: -20px;
 
-    width: min(80vw, 500px);
     min-width: 300px;
+    width: 80vw;
+    max-width: 500px;
+
+    aspect-ratio: 1 / 1; /* делает блок квадратным */
 
     position: relative;
     bottom: 5%;
     z-index: 100;
 
-    display: none; /* включается JS */
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 
     padding-bottom: 20px;
     padding-inline: 10px;
 
+    display: none;
     animation: drop 0.7s ease forwards;
 }
 
-.game .menu__heading {
+
+.game .menu__heading{
   margin-bottom: 10px;
 }
-
-/* Сетка квадратов — полностью адаптивная */
 .code-container {
   display: grid;
-  width: 100%;
-  gap: clamp(6px, 2vw, 12px);
-
-  /* Автоматическая адаптация под ширину */
-  grid-template-columns: repeat(auto-fit, minmax(clamp(50px, 12vw, 90px), 1fr));
-
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(10px,1fr);
+  width:100%;
+  gap:10px;
   margin-block: 10px;
 }
 
-/* Квадраты */
 .code-input {
+  width: clamp(15px,5vw,40px);
+  height: clamp(10px,5vw,40px);
   aspect-ratio: 1;
-
-  width: clamp(50px, 12vw, 90px);
-  height: clamp(50px, 12vw, 90px);
-
-  font-size: clamp(22px, 6vw, 38px);
-  font-family: sans-serif;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: calc((clamp(6px,5vw,40px)) - 3px);
   text-align: center;
-
   border: 2px solid #ccc;
   border-radius: 5px;
   text-transform: uppercase;
 
   transition: all 0.2s;
 }
-
-/* Состояния квадратов */
-.code-input-active {
+.code-input-active{
   border: 2px solid #848484;
 }
-
-.code-input-right {
-  background-color: rgb(161, 237, 161);
-  border-color: cadetblue;
+.code-input-right{
+    background-color: rgb(161, 237, 161);
+    border-color: cadetblue;
+}
+.code-input-near{
+    background-color: rgb(240, 255, 106);
+    border-color: cadetblue
+}
+.code-input-wrong{
+    background-color: rgb(227, 125, 105);
+    border-color: cadetblue;
 }
 
-.code-input-near {
-  background-color: rgb(240, 255, 106);
-  border-color: cadetblue;
-}
-
-.code-input-wrong {
-  background-color: rgb(227, 125, 105);
-  border-color: cadetblue;
-}
-
-/* Фокус */
 .code-input:focus {
   border-color: #143e1b;
   outline: none;
 }
-
-/* Адаптив для маленьких экранов (iPhone SE, старые Android) */
-@media (max-width: 400px) {
-  .code-container {
-    gap: clamp(4px, 2vw, 8px);
-    grid-template-columns: repeat(auto-fit, minmax(clamp(55px, 15vw, 75px), 1fr));
-  }
-
-  .code-input {
-    width: clamp(55px, 15vw, 75px);
-    height: clamp(55px, 15vw, 75px);
-    font-size: clamp(24px, 7vw, 34px);
-  }
-}
-
-/* Общий фон */
-body {
-    background-color: whitesmoke;
-    background-image: url('../images/background.png');
-    background-size: 30%;
-    background-repeat: inherit;
-
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Диалог */
-#result-dialog {
-    height: 40%;
-    width: 60%;
+@media (max-width: 500px) {
+    .code-container {
+        gap: 3px;
+    }
+    .code-input {
+        border-radius: 1px;
+    }
 }
