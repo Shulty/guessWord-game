@@ -48,6 +48,7 @@
   width: clamp(15px,5vw,40px);
   height: clamp(10px,5vw,40px);
   aspect-ratio: 1;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: calc((clamp(6px,5vw,40px)) - 3px);
   text-align: center;
   border: 2px solid #ccc;
