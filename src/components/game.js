@@ -25,6 +25,11 @@
      this.activeLine = null;
     }
     checkLine(){
+        let currentWord = '';
+        for(const line of this.activeLine){
+            currentWord += line.value;
+        }
+        console.log(currentWord);
 
         this.activeLine.forEach((el, index) => {
             setTimeout(() => {
