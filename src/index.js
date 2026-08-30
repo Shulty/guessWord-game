@@ -1,19 +1,23 @@
 import { Game } from "./components/game.js";
 const menuEl = document.getElementById('menu');
 const playBtn = document.querySelector('.menu__start-btn');
+const dialogButton = document.getElementById('dialog-button');
+let currentGame = null;
 
+playBtn.addEventListener('click', () => startGame());
+dialogButton.addEventListener('click', () => startGame());
 
-playBtn.addEventListener('click',()=>startGame());
+async function startGame() {
+    if (currentGame) {
+        currentGame.destroy();
+        currentGame = null;
+    }
 
-
-async function startGame(){
     menuEl.style.opacity = 0;
-    setTimeout(()=>{
+    setTimeout(() => {
         menuEl.style.display = 'none';
-        const game = new Game(randomWord());
-    },800);
-    
-
+        currentGame = new Game(randomWord());
+    }, 800);
 }
 function randomWord(){
 const words = [
