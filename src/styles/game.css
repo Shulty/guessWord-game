@@ -3,18 +3,17 @@
   to   { transform: translateY(0); }
 }
 .game{
-
-
     background-color: rgb(244, 244, 244);
 
     border: 20px solid rgb(244, 244, 244);
     outline: 2px solid rgb(47, 47, 47);
     outline-offset: -20px;
 
-    height: fit-content;
     min-width: 300px;
-    width: 70%;
+    width: 80vw;
     max-width: 500px;
+
+    aspect-ratio: 1 / 1; /* делает блок квадратным */
 
     position: relative;
     bottom: 5%;
@@ -28,11 +27,11 @@
     padding-bottom: 20px;
     padding-inline: 10px;
 
-
-
     display: none;
     animation: drop 0.7s ease forwards;
 }
+
+
 .game .menu__heading{
   margin-bottom: 10px;
 }
@@ -46,9 +45,10 @@
 }
 
 .code-input {
-  width: clamp(10px,5vw,40px);
+  width: clamp(15px,5vw,40px);
   height: clamp(10px,5vw,40px);
   aspect-ratio: 1;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: calc((clamp(6px,5vw,40px)) - 3px);
   text-align: center;
   border: 2px solid #ccc;
@@ -77,9 +77,9 @@
   border-color: #143e1b;
   outline: none;
 }
-@media (max-width: 399px) {
+@media (max-width: 500px) {
     .code-container {
-        gap:5px;
+        gap: 3px;
     }
     .code-input {
         border-radius: 1px;
