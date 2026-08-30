@@ -1,87 +1,97 @@
 @keyframes drop {
-  from { transform: translateY(-100%); }
-  to   { transform: translateY(0); }
+    from { transform: translateY(-100%); }
+    to   { transform: translateY(0); }
 }
-.game{
 
-
+.game {
     background-color: rgb(244, 244, 244);
-
     border: 20px solid rgb(244, 244, 244);
     outline: 2px solid rgb(47, 47, 47);
     outline-offset: -20px;
-
     height: fit-content;
     min-width: 300px;
     width: 70%;
     max-width: 500px;
-
     position: relative;
     bottom: 5%;
     z-index: 100;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
     padding-bottom: 20px;
     padding-inline: 10px;
-
-
-
     display: none;
     animation: drop 0.7s ease forwards;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.game .menu__heading{
-  margin-bottom: 10px;
+
+.game .menu__heading {
+    margin-bottom: 10px;
+    font-family: inherit;
+    white-space: nowrap;
 }
+
 .code-container {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(10px,1fr);
-  width:100%;
-  gap:10px;
-  margin-block: 10px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    width: 100%;
+    gap: 10px;
+    margin-block: 10px;
 }
 
 .code-input {
-  width: clamp(10px,5vw,40px);
-  height: clamp(10px,5vw,40px);
-  aspect-ratio: 1;
-  font-size: calc((clamp(6px,5vw,40px)) - 3px);
-  text-align: center;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  text-transform: uppercase;
+    min-width: 0;
+    width: 100%;
+    aspect-ratio: 1;
+    font-size: clamp(12px, 4vw, 32px);
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: clip;
+    word-break: break-all;
+}
 
-  transition: all 0.2s;
+.code-input-active {
+    border: 2px solid #848484;
 }
-.code-input-active{
-  border: 2px solid #848484;
-}
-.code-input-right{
+
+.code-input-right {
     background-color: rgb(161, 237, 161);
     border-color: cadetblue;
 }
-.code-input-near{
+
+.code-input-near {
     background-color: rgb(240, 255, 106);
-    border-color: cadetblue
+    border-color: cadetblue;
 }
-.code-input-wrong{
+
+.code-input-wrong {
     background-color: rgb(227, 125, 105);
     border-color: cadetblue;
 }
 
 .code-input:focus {
-  border-color: #143e1b;
-  outline: none;
+    border-color: #143e1b;
+    outline: none;
 }
+
 @media (max-width: 399px) {
     .code-container {
-        gap:5px;
+        gap: 5px;
     }
     .code-input {
         border-radius: 1px;
+        font-size: clamp(10px, 3.5vw, 20px);
+    }
+    .game .menu__heading {
+        font-size: clamp(30px, 4vw, 40px);
     }
 }
